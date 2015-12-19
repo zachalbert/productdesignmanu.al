@@ -1,0 +1,11 @@
+{
+  "name": "Product Design Manual",
+  "description": "Pearls of product design wisdom",
+  "version": "0.1.0",
+  "homepage": "https://productdesignmanu.al",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+  }
+}

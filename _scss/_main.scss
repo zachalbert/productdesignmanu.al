@@ -1,0 +1,24 @@
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.side-nav,
+.content {
+  float: left;
+  height: 100vh;
+  padding: (50px + $spacer) 1rem 1rem;
+}
+
+.side-nav_primary {
+  background: #eee;
+}
+
+.side-nav_secondary {
+  background: #ddd;
+}
+
+.no-padding {
+  padding: 0;
+}
+
