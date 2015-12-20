@@ -9,6 +9,10 @@ body {
   padding-top: 50px + $spacer;
 }
 
+[class*="container"] {
+  overflow: hidden;
+}
+
 .side-nav_primary {
   background: #eee;
 }

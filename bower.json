@@ -1,5 +1,5 @@
 {
-  "name": "Product Design Manual",
+  "name": "productDesignManual",
   "description": "Pearls of product design wisdom",
   "version": "0.1.0",
   "homepage": "https://productdesignmanu.al",
@@ -7,5 +7,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "jquery": "~2.1.4"
   }
 }
