@@ -4,15 +4,30 @@
     
     <div class="container-fluid no-padding">
 
-      {% include top-nav.html %}
+      <div class="row">
+        
+        <div class="col-xs-12">
+          {% include top-nav.html %}
+        </div>
+        
+        <div class="col-xs-4 col-sm-2">
+          {% include side-nav-primary.html %}
+        </div>
 
-      {% include side-nav-primary.html %}
-      {% include side-nav-secondary.html %}
+        <div class="col-xs-6 col-sm-2">
+          {% include side-nav-secondary.html %}
+        </div>
+        
+        <div class="col-sm-8">
+          <div class="content">
+            {{ content }}
+          </div>
+        </div>
 
-      <div class="content">
-        {{ content }}
       </div>
-      
+
     </div>
+      
+  </div>
 
 {% include _footer.html %}

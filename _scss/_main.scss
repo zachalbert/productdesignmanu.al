@@ -5,9 +5,8 @@ body {
 
 .side-nav,
 .content {
-  float: left;
   height: 100vh;
-  padding: (50px + $spacer) 1rem 1rem;
+  padding-top: 50px + $spacer;
 }
 
 .side-nav_primary {
