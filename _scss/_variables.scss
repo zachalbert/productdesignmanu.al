@@ -1,1 +1,39 @@
 $spacer: 16px;
+
+/********************\
+      \     |    |    |
+      _/************w/
+     |  )    ,| 
+     _>******Y    # Color Palettes
+    |  )    ,| 
+    _>******Y     - Uses numbered colors, and tries to keep numbers harmonious and as
+   |  )    ,|       forgiving as possible.
+ \  \******Y      - Namespace to add new palettes (e.g. $NEW-red-1)
+--\----*/
+
+$tc-red-1:      #FF7754;
+$tc-yellow-1:   #FFF8D3;
+$tc-white-1:    #F3F2F1;
+
+.bg-tc-red-1 {
+  background: $tc-red-1;
+  color: $tc-yellow-1;
+}
+
+.color-tc-red-1 {
+  color: $tc-red-1;
+}
+
+.bg-tc-yellow-1 {
+  background: $tc-yellow-1;
+}
+
+.bg-tc-white-1 {
+  background: $tc-white-1;
+}
+
+
+
+// Site colors
+
+$color-border: $gray-light;
