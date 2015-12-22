@@ -1,3 +1,8 @@
+//mixins
+@mixin default-shadow {
+  box-shadow: 0 2px 4px transparentize($color-dark,.7);
+}
+
 body {
   font-size: 16px;
   line-height: 1.5;
@@ -36,7 +41,7 @@ a {
 }
 
 .side-nav_primary {
-  background: #555;
+  background: #9CA5B2;
   padding: 0;
 }
 
@@ -66,15 +71,16 @@ a {
   a {
     padding: 1rem 0;
     display: block;
-    color: darken(#fff, 15%);
+    color: $color-dark;
     text-decoration: none;
 
     &.active {
-      background: darken(#fff, 50%);
+      background: #E4E6EB;
 
       &:hover {
-        background: darken(#fff, 55%);
+        background: #D5D4D9;
       }
+      @include default-shadow;
     }
 
     &:hover {
@@ -181,4 +187,10 @@ section {
   text-align: center;
   margin-bottom: $spacer * 3;
   color: $gray-light;
+
+
+//custom nav
+.navbar-pdm {
+  background: $color-accent;
+  @include default-shadow;
 }
