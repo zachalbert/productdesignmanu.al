@@ -55,7 +55,7 @@ small {
   background: $color-dark;
   padding: 0;
   flex: 0 0 100px;
-  
+  z-index: 1;
 }
 
 .side-nav-secondary {
@@ -64,6 +64,7 @@ small {
   background: $color-light;
   padding: 0;
   flex: 1;
+  z-index: 2;
 }
 
 .no-padding {
@@ -91,12 +92,20 @@ small {
     font-size: .6875rem;
     text-transform: uppercase;
     line-height: 1rem;
+    box-shadow: 0 1px 0 $color-dark-md;
     @include truncate;
     &.active {
       background: $color-light;
-
+      position: relative;
+      z-index:2;
       &:hover {
-        background: $color-dark;
+        background: $color-light;
+        .category-list__icon {
+          &:before {
+            background: $color-accent;
+            color: $color-accent-dark;
+          }
+        }
       }
       @include default-shadow;
       .category-list__icon {
@@ -108,9 +117,13 @@ small {
     }
 
     &:hover {
-      background-color: rgba(#000, 0.2);
-      color: #fff;
+      background: darken($color-light, 10%);
       text-decoration: none;
+      .category-list__icon {
+        &:before {
+          background: $color-dark;
+        }
+      }
     }
   }
 }
@@ -129,6 +142,7 @@ small {
     vertical-align: middle;
     width: 48px;
     margin-bottom: .5rem;
+    transition: .3s;
   }
 }
 
@@ -173,15 +187,16 @@ small {
   a {
     display: block;
     padding: $spacer;
-
+    box-shadow: 0 1px 0 $color-light-md;
     &:hover {
       text-decoration: none;
-      background: rgba(#000, 0.1);
+      color: $color-accent-dark;
+      background: $color-light-md;
     }
 
     &.active {
       background-color: $color-light-xtr;
-
+      box-shadow: 0 1px 0 $color-light-md, inset 4px 0 0 $color-accent;  
       &:hover {
         background-color: #f8f8f8;
       }
@@ -193,8 +208,9 @@ small {
     }
 
     .copy {
-      color: $body-color;
+      color: $color-dark-md;
       display: block;
+      font-weight: 300;
     }
   }
 }
@@ -242,13 +258,14 @@ section {
 //custom nav
 .navbar-pdm {
   background: $color-accent;
+  font-weight: 500;
   @include default-shadow;
   .navbar-nav {
     .nav-link {
-      color: $color-dark-md;
+      color: $color-accent-dark;
 
       @include hover-focus {
-        color: $color-dark;
+        color: $color-accent-dark;
       }
     }
 
@@ -257,7 +274,7 @@ section {
     .nav-link.open,
     .nav-link.active {
       @include plain-hover-focus {
-        color: $navbar-dark-active-color;
+        color: $color-light-xtr;
       }
     }
   }
