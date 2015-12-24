@@ -39,7 +39,7 @@ small {
 .content {
   @include make-col();
   height: 100vh;
-  padding: 96px 32px 32px 32px;
+  padding: 64px 0px 0px 0px;
   overflow-y: auto;
   flex: 2;
   z-index: 2;
@@ -47,14 +47,14 @@ small {
 }
 
 [class*="container"] {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .side-nav-primary {
   @include make-col();
   background: $color-dark;
   padding: 0;
-  flex: 0 0 116px;
+  flex: 0 0 100px;
   
 }
 
@@ -81,7 +81,6 @@ small {
 .category-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 0 1rem;
   text-align: center;
 
   a {
@@ -173,7 +172,7 @@ small {
 .link-list {
   a {
     display: block;
-    padding: 1rem;
+    padding: $spacer;
 
     &:hover {
       text-decoration: none;
@@ -190,19 +189,19 @@ small {
 
     .title {
       font-weight: bold;
-      margin-bottom: $spacer/2;
       display: block;
     }
 
     .copy {
       color: $body-color;
+      display: block;
     }
   }
 }
 
 section {
   margin: 0;
-  //padding: ( $spacer * 2 ) $spacer;
+  padding: ( $spacer * 2 );
 }
 
 .post {
