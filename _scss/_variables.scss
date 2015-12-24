@@ -1,5 +1,7 @@
 $enable-flex:               true !default;
 
+$font-family-sans-serif:     "FreightSans Pro", Helvetica, Arial, sans-serif !default;
+
 //spacing
 $spacer-xs: .25rem;
 $spacer-sm: .5rem;
@@ -46,6 +48,27 @@ $tc-white-1:    #F3F2F1;
 
 $color-border: gray;
 
-//colors
-$color-dark: #3D4045;
-$color-accent: #FF0057;
+$color-brand:       #FC6E51;  //logo, special CTAs
+
+$color-light-xtr:   #F7F9FC;  //essentially white
+$color-light:       #E4E6EB;  //list heading backgrounds
+$color-light-md:    #E0E2E3;  //borders 
+$color-dark:        #9CA5B2;  //icons
+$color-dark-md:     #828D9E;  //subtext
+$color-dark-xtr:    #494A4A;  //body text, headings, main nav background
+ 
+$color-accent:      #FC6E51;  //links, primary buttons, etc...
+$color-accent-dark: adjust-color($color-accent, $saturation:40%, $lightness:-40%); //#D94123
+
+//Overrides to variables
+$gray-dark:                 $color-dark-xtr !default;
+$gray:                      $color-dark-md !default;
+$gray-light:                $color-dark !default;
+$gray-lighter:              $color-light-md !default;
+$gray-lightest:             $color-light !default;
+
+$brand-primary:             $color-accent !default;
+$brand-success:             #5cb85c !default;
+$brand-info:                #5bc0de !default;
+$brand-warning:             #f0ad4e !default;
+$brand-danger:              #d9534f !default;
