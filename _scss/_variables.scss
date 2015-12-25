@@ -21,44 +21,21 @@ $spacer-xl: 2rem;
  \  \******Y      - Namespace to add new palettes (e.g. $NEW-red-1)
 --\----*/
 
-$tc-red-1:      #FF7754;
-$tc-yellow-1:   #FFF8D3;
-$tc-white-1:    #F3F2F1;
-
-.bg-tc-red-1 {
-  background: $tc-red-1;
-  color: $tc-yellow-1;
-}
-
-.color-tc-red-1 {
-  color: $tc-red-1;
-}
-
-.bg-tc-yellow-1 {
-  background: $tc-yellow-1;
-}
-
-.bg-tc-white-1 {
-  background: $tc-white-1;
-}
-
-
-
 // Site colors
 
-$color-border: gray;
-
-$color-brand:       #FC6E51;  //logo, special CTAs
-
-$color-light-xtr:   #F7F9FC;  //essentially white
-$color-light:       #E4E6EB;  //list heading backgrounds
-$color-light-md:    #CCCFD9;  //borders 
-$color-dark:        #9CA5B2;  //icons
-$color-dark-md:     #828D9E;  //subtext
-$color-dark-xtr:    #494A4A;  //body text, headings, main nav background
- 
 $color-accent:      #FC6E51;  //links, primary buttons, etc... hsl(10.2, 96.6%, 65.3%)
 $color-accent-dark: adjust-color($color-accent, $saturation:-24.4%, $lightness:-15.9%); //#D94123 hsl(9.9, 72.2%, 49.4%)
+
+$color-brand:       $color-accent;  //logo, special CTAs
+
+$color-light-xtr:   adjust-color($color-accent, $hue:205.8deg, $saturation:-51.1%, $lightness:32.5%);  //essentially white | #F7F9FC | hsl(216, 45.5%, 97.8%)
+$color-light:       adjust-color($color-accent, $hue:212.7deg, $saturation:-81.7%, $lightness:25.5%);  //list heading backgrounds | #E4E6EB | hsl(222.9, 14.9%, 90.8%)
+$color-light-md:    adjust-color($color-accent, $hue:216deg, $saturation:-82%, $lightness:17.2%);  //borders | #CCCFD9 | hsl(226.2, 14.6%, 82.5%)
+$color-dark:        adjust-color($color-accent, $hue:205.3deg, $saturation:-83%, $lightness:.2%);  //icons | #9CA5B2 | hsl(215.5, 12.5%, 65.5%)
+$color-dark-md:     adjust-color($color-accent, $hue:206.2deg, $saturation:-84%, $lightness:-8.8%);  //subtext | #828D9E | hsl(216.4, 12.6%, 56.5%)
+$color-dark-xtr:    adjust-color($color-accent, $hue:169.8deg, $saturation:-95.9%, $lightness:-36.5%);  //body text, headings, main nav background #494A4A | hsl(180, 0.7%, 28.8%)
+ 
+
 
 //Overrides to variables
 $gray-dark:                 $color-dark-xtr !default;
@@ -82,3 +59,27 @@ $btn-primary-border:             $color-accent !default;
 
 $input-padding-x:                $spacer !default;
 $input-padding-y:                $spacer-md !default;
+
+
+
+
+$tc-red-1:      adjust-color($color-accent, $hue:350deg);
+$tc-yellow-1:   adjust-color($color-accent, $hue:26deg);
+$tc-white-1:    $color-light-xtr;
+
+.bg-tc-red-1 {
+  background: $tc-red-1;
+  color: $tc-white-1;
+}
+
+.color-tc-red-1 {
+  color: $tc-red-1;
+}
+
+.bg-tc-yellow-1 {
+  background: $tc-yellow-1;
+}
+
+.bg-tc-white-1 {
+  background: $tc-white-1;
+}
