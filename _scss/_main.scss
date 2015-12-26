@@ -175,6 +175,12 @@ small {
   font-style: italic;
   font-weight: bold;
   line-height: 2rem;
+  width: 144px;
+  height: 33px;
+  .st0{fill:$color-accent-dark;}
+  .st1{fill:$color-light-xtr;}
+  .st2{stroke:$color-accent;}
+  .st4{fill:$color-accent;}
 }
 
 .tagline {
