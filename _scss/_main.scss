@@ -222,14 +222,28 @@ small {
 }
 
 section {
-  margin: 0;
   padding: ( $spacer * 2 );
+}
+.section-full {
+  margin: 0 -2rem;
+}
+.section-error {
+
 }
 
 .post {
+  overflow-x: hidden;
   header {
     padding-left: $spacer;
     padding-right: $spacer;
+  }
+  .body {
+    padding: 0 2rem;
+  }
+  img {
+    border-radius: 2px;
+    max-width: 100%;
+    margin: 1rem 0;
   }
 }
 
@@ -252,7 +266,8 @@ section {
 }
 
 .post-meta {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 0.25px;
