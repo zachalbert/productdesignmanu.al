@@ -9,3 +9,17 @@
     <span class="copy">Blah blah colors, blah blah design, something about sketch&hellip;</span>
   </a>
 </div>
+<!-- TODO Make a list of lists of links with individual ids to show/hide lists of links -->
+
+{% for category in site.primary_navigation %}
+  {% assign current = nil %}
+  {% if page.category == category.text %}
+    {% assign current = 'active' %}
+  {% endif %}
+
+  <li>
+    <a class="{{ current }}" href="#{{ category.url }}">
+      <i class="category-list__icon {{ category.icon_class}}"></i>{{ category.text }}
+    </a>
+  </li>
+{% endfor %}

@@ -1,22 +1,16 @@
 <div class="side-nav">
-  <ul class="category-list">
-    <li>
-      <a href="#">
-        <i class="category-list__icon icon-text"></i>
-        Typography
-      </a>
-    </li>
-    <li>
-      <a href="#" class="active">
-        <i class="category-list__icon icon-magnifier"></i>
-        Research
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="category-list__icon icon-stationery-1"></i>
-        Visual Design
-      </a>
-    </li>
+  <ul class="category-list" id="primary-nav">
+    {% for category in site.primary_navigation %}
+      {% assign current = nil %}
+      {% if page.category == category.text %}
+        {% assign current = 'active' %}
+      {% endif %}
+
+      <li>
+        <a class="{{ current }}" href="#{{ category.url }}">
+          <i class="category-list__icon {{ category.icon_class}}"></i>{{ category.text }}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </div>
