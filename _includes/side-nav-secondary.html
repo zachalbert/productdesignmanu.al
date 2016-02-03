@@ -1,25 +1,22 @@
 <div class="side-nav link-list">
-  <a href="/hsb-best-way-to-pick-color" class="active">
-    <span class="title">Why HSB is the best way to pick color</span>
-    <span class="copy">Use hue, saturation, and brightness for a more intuitive way
-    to understand, modify, and create harmonious color palettes&hellip;</span>
-  </a>
-  <a href="/example-post">
-    <span class="title">Example post</span>
-    <span class="copy">Blah blah colors, blah blah design, something about sketch&hellip;</span>
-  </a>
-</div>
-<!-- TODO Make a list of lists of links with individual ids to show/hide lists of links -->
+{% for category in site.categories %}
+  <div class="cat-list" id="{{ category | first | downcase | replace: ' ', '-' }}">
+    {% for posts in category %}
+      {% if forloop.index > 1 %}
+        {% for post in posts %}
+          {% assign current = nil %}
+          {% assign thisUrl = post.id | append: '/' %}
+          {% if page.url == thisUrl %}
+            {% assign current = 'active' %}
+          {% endif %}
 
-{% for category in site.primary_navigation %}
-  {% assign current = nil %}
-  {% if page.category == category.text %}
-    {% assign current = 'active' %}
-  {% endif %}
-
-  <li>
-    <a class="{{ current }}" href="#{{ category.url }}">
-      <i class="category-list__icon {{ category.icon_class}}"></i>{{ category.text }}
-    </a>
-  </li>
+          <a href="{{ post.url }}" class="{{ current }}">
+            <span class="title">{{ post.title }}</span>
+            <span class="copy">{{ post.excerpt }}&hellip;</span>
+          </a>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 {% endfor %}
+</div>
