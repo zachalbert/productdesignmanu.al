@@ -28,6 +28,8 @@ $color-accent-dark: adjust-color($color-accent, $saturation:-24.4%, $lightness:-
 
 $color-brand:       $color-accent;  //logo, special CTAs
 
+// other colors based on accent
+
 $color-light-xtr:   adjust-color($color-accent, $hue:205.8deg, $saturation:-51.1%, $lightness:32.5%);  //essentially white | #F7F9FC | hsl(216, 45.5%, 97.8%)
 $color-light:       adjust-color($color-accent, $hue:212.7deg, $saturation:-81.7%, $lightness:25.5%);  //list heading backgrounds | #E4E6EB | hsl(222.9, 14.9%, 90.8%)
 $color-light-md:    adjust-color($color-accent, $hue:216deg, $saturation:-82%, $lightness:17.2%);  //borders | #CCCFD9 | hsl(226.2, 14.6%, 82.5%)
@@ -35,7 +37,14 @@ $color-dark:        adjust-color($color-accent, $hue:205.3deg, $saturation:-83%,
 $color-dark-md:     adjust-color($color-accent, $hue:206.2deg, $saturation:-84%, $lightness:-8.8%);  //subtext | #828D9E | hsl(216.4, 12.6%, 56.5%)
 $color-dark-xtr:    adjust-color($color-accent, $hue:169.8deg, $saturation:-95.9%, $lightness:-36.5%);  //body text, headings, main nav background #494A4A | hsl(180, 0.7%, 28.8%)
  
+// other colors not based on accent 
 
+$color-light-xtr:   #F7F9FC;  //essentially white |  | hsl(216, 45.5%, 97.8%)
+$color-light:       #E4E6EB;  //list heading backgrounds |  | hsl(222.9, 14.9%, 90.8%)
+$color-light-md:    #CCCFD9;  //borders |  | hsl(226.2, 14.6%, 82.5%)
+$color-dark:        #9CA5B2;  //icons |  | hsl(215.5, 12.5%, 65.5%)
+$color-dark-md:     #828D9E;  //subtext |  | hsl(216.4, 12.6%, 56.5%)
+$color-dark-xtr:    #494A4A;  //body text, headings, main nav background  | hsl(180, 0.7%, 28.8%)
 
 //Overrides to variables
 $gray-dark:                 $color-dark-xtr !default;
