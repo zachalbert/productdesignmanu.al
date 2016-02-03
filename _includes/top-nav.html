@@ -1,56 +1,20 @@
 <nav class="navbar navbar-pdm navbar-fixed-top">
   <div class="row">
     <div class="col-sm-6">
-      <a href="/" class="logo">
-        <span class="wordmark">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   viewBox="0 0 48 12" style="enable-background:new 0 0 48 12;" xml:space="preserve">
-<g>
-  <rect x="21" y="4" class="st0" width="1" height="1"/>
-  <rect x="19" y="4" class="st0" width="1" height="1"/>
-  <rect x="18" y="7" class="st0" width="1" height="1"/>
-  <rect x="20" y="7" class="st0" width="1" height="1"/>
-  <rect x="22" y="7" class="st0" width="1" height="1"/>
-  <rect x="30" y="4" class="st0" width="2" height="1"/>
-  <rect x="29" y="7" class="st0" width="1" height="1"/>
-  <rect x="32" y="7" class="st0" width="1" height="1"/>
-  <path class="st0" d="M37,7h-2c-0.6,0-1-0.4-1-1v1c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1V6C38,6.6,37.6,7,37,7z"/>
-  <path class="st0" d="M44,6v1c0,0.6,0.4,1,1,1h3V7h-3C44.4,7,44,6.6,44,6z"/>
-  <rect x="27" y="7" class="st0" width="1" height="1"/>
-  <rect x="24" y="7" class="st0" width="1" height="1"/>
-  <rect x="25" y="4" class="st0" width="2" height="1"/>
-  <rect x="25" y="6" class="st0" width="2" height="1"/>
-  <rect x="42" y="7" class="st0" width="1" height="1"/>
-  <rect x="40" y="4" class="st0" width="2" height="1"/>
-  <rect x="40" y="6" class="st0" width="2" height="1"/>
-  <rect x="39" y="7" class="st0" width="1" height="1"/>
-  <path class="st0" d="M7,11c-0.6,0-1-0.4-1-1H0v1h5.3c0.3,0.6,1,1,1.7,1s1.4-0.4,1.7-1H14v-1H8C8,10.6,7.6,11,7,11z"/>
-  <rect x="3" y="4" class="st1" width="2" height="1"/>
-  <rect x="9" y="4" class="st1" width="2" height="2"/>
-  <path class="st1" d="M7,2c0-0.6-0.4-1-1-1H0v1v7h6c0.6,0,1,0.4,1,1c0-0.6,0.4-1,1-1h6V2V1H8C7.4,1,7,1.4,7,2z M6,5c0,0.6-0.4,1-1,1
-    H3v1H2V3h3c0.6,0,1,0.4,1,1V5z M12,4v2c0,0.6-0.4,1-1,1H8V3h3C11.6,3,12,3.4,12,4z"/>
-  <path class="st1" d="M22,3h-1c-0.2,0-0.4,0.1-0.5,0.2C20.4,3.1,20.2,3,20,3h-1c-0.6,0-1,0.4-1,1v1v2h1V5V4h1v1v2h1V5V4h1v1v2h1V5V4
-    C23,3.4,22.6,3,22,3z"/>
-  <path class="st1" d="M32,3h-2c-0.6,0-1,0.4-1,1v1v2h1V5V4h2v1v2h1V5V4C33,3.4,32.6,3,32,3z"/>
-  <path class="st1" d="M37,4v2h-2V4V3h-1v1v2c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1V4V3h-1V4z"/>
-  <path class="st1" d="M45,6V4V3h-1v1v2c0,0.6,0.4,1,1,1h3V6H45z"/>
-  <path class="st1" d="M27,3h-2c-0.6,0-1,0.4-1,1v1v1v1h1V6h2v1h1V6V5V4C28,3.4,27.6,3,27,3z M27,5h-2V4h2V5z"/>
-  <path class="st1" d="M42,3h-2c-0.6,0-1,0.4-1,1v1v1v1h1V6h2v1h1V6V5V4C43,3.4,42.6,3,42,3z M42,5h-2V4h2V5z"/>
-</g>
-</svg>
-
-        </span>
-<!--         <small class="tagline">A visual encyclopedia of digital product design skills.</small>
- -->  </a>    
+      {% include logomark.html %}
     </div>
     <div class="col-sm-6">
       <ul class="nav navbar-nav pull-sm-right">
-        <li class="nav-item active">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contribute">Contribute</a>
-        </li>
+        {% for link in site.main_navigation %}
+          {% assign current = nil %}
+          {% if page.url == link.url or page.layout == link.layout %}
+            {% assign current = 'active' %}
+          {% endif %}
+
+          <li class="nav-item {% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
+            <a class="nav-link" href="{{ link.url }}">{{ link.text }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </div>

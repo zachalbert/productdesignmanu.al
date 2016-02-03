@@ -1,11 +1,22 @@
 <div class="side-nav link-list">
-  <a href="/hsb-best-way-to-pick-color" class="active">
-    <span class="title">Why HSB is the best way to pick color</span>
-    <span class="copy">Use hue, saturation, and brightness for a more intuitive way
-    to understand, modify, and create harmonious color palettes&hellip;</span>
-  </a>
-  <a href="/example-post">
-    <span class="title">Example post</span>
-    <span class="copy">Blah blah colors, blah blah design, something about sketch&hellip;</span>
-  </a>
+{% for category in site.categories %}
+  <div class="cat-list" id="{{ category | first | downcase | replace: ' ', '-' }}">
+    {% for posts in category %}
+      {% if forloop.index > 1 %}
+        {% for post in posts %}
+          {% assign current = nil %}
+          {% assign thisUrl = post.id | append: '/' %}
+          {% if page.url == thisUrl %}
+            {% assign current = 'active' %}
+          {% endif %}
+
+          <a href="{{ post.url }}" class="{{ current }}">
+            <span class="title">{{ post.title }}</span>
+            <span class="copy">{{ post.excerpt }}&hellip;</span>
+          </a>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endfor %}
 </div>

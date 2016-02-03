@@ -250,7 +250,7 @@ section {
   font-weight: 100;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem 2rem;
 }
 
 .post-subtitle {
@@ -311,3 +311,16 @@ section {
   padding: $spacer-xs;
 }
 
+.link-list {
+  position: relative;
+}
+
+.cat-list {
+  visibility: hidden;
+  transition: visibility 0s 0.6s;
+
+  &.is-visible {
+    visibility: visible;
+    transition: visibility 0s 0s;
+  }
+}

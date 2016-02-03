@@ -5,8 +5,25 @@ markdown: kramdown
 highlighter: pygments
 exclude: ["node_modules", "bower_components", "gulpfile.js", "package.json", "bower.json", "README.md"]
 excerpt_separator: "<!-- more -->"
-permalink: "/:title"
+permalink: "/:title/"
 paginate: 5
 paginate_path: "/p:num"
 gems:
   - jekyll-paginate
+# Use this list to generate routes
+main_navigation:
+- text: About
+  url: /about/
+- text: Contribute
+  url: /contribute/
+# Left-most menu, containing categories. See /_scss/_icons.scss to see available icon classes.
+primary_navigation:
+- text: Typography
+  url: typography
+  icon_class: icon-text
+- text: Research
+  url: research
+  icon_class: icon-magnifier
+- text: Visual Design
+  url: visual-design
+  icon_class: icon-stationery-1
