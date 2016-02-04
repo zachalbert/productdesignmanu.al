@@ -2,7 +2,8 @@
   <ul class="category-list" id="primary-nav">
     {% for category in site.primary_navigation %}
       {% assign current = nil %}
-      {% if page.category == category.text %}
+
+      {% if page.categories contains category.text %}
         {% assign current = 'active' %}
       {% endif %}
 

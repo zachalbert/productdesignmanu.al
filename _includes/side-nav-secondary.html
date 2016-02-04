@@ -1,13 +1,24 @@
 <div class="side-nav link-list">
 {% for category in site.categories %}
-  <div class="cat-list" id="{{ category | first | downcase | replace: ' ', '-' }}">
+  {% assign shouldShow = nil %}
+  {% assign pageCat = page.categories %}
+  {% assign thisCat = category[0] %}
+
+  {% if pageCat contains thisCat %}
+    {% assign shouldShow = 'should-show' %}
+  {% endif %}
+  <div class="cat-list {{ shouldShow }}" id="{{ category | first | downcase | replace: ' ', '-' }}">
+
     {% for posts in category %}
+
       {% if forloop.index > 1 %}
+
         {% for post in posts %}
           {% assign current = nil %}
           {% assign thisUrl = post.id | append: '/' %}
+
           {% if page.url == thisUrl %}
-            {% assign current = 'active' %}
+            {% assign current = 'active animated flipInX' %}
           {% endif %}
 
           <a href="{{ post.url }}" class="{{ current }}">
@@ -17,6 +28,7 @@
         {% endfor %}
       {% endif %}
     {% endfor %}
+
   </div>
 {% endfor %}
 </div>
