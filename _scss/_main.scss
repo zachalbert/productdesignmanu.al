@@ -326,11 +326,9 @@ section {
 }
 
 .cat-list {
-  visibility: hidden;
-  transition: visibility 0s 0.6s;
+  position: absolute;
+  display: none;
+}
 
-  &.is-visible {
-    visibility: visible;
-    transition: visibility 0s 0s;
-  }
+.primary-nav__link {
 }

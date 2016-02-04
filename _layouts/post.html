@@ -14,7 +14,10 @@ layout: default
               </div>
               {% endif %}
               <h4 class="post-meta">
-                Written in <a href="/{{ page.category | slugify }}">{{ page.category }}</a> by <a href="{{ page.authorUrl }}"><strong>{{ page.author }}</strong></a>, <time datetime="{{ page.date | date: '%Y-%m-%d'}}" class="post-date" itemprop="datePublished">{{ page.date | date: "%B %Y" }}</time>.
+                Written in <strong>{{ page.categories }}</strong> by <a href="{{ page.authorUrl }}"><strong>{{ page.author }}</strong></a>, <time datetime="{{ page.date | date: '%Y-%m-%d'}}" class="post-date" itemprop="datePublished">{{ page.date | date: "%B %Y" }}</time>.
+                {% if page.twitterUsername %}
+                <br><a class="twitter-follow-button" href="https://twitter.com/{{ page.twitterUsername }}" data-size="large">Follow @{{ page.twitterUsername }}</a>
+                {% endif %}
               </h4>
             </div>
           </header>

@@ -21,9 +21,6 @@ primary_navigation:
 - text: Typography
   url: typography
   icon_class: icon-text
-- text: Research
-  url: research
-  icon_class: icon-magnifier
 - text: Visual Design
   url: visual-design
   icon_class: icon-stationery-1
