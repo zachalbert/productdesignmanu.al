@@ -16,8 +16,8 @@ $(document).ready( function() {
       // targetList is the id of the list we want to be shown
       var targetList = $(this).attr('href').substring(1); // e.g. typography
 
-      $('.cat-list').css('display', 'none');
-      $('#' + targetList).show();
+      $('.cat-list').slideUp( 50 );
+      $('#' + targetList).delay( 80 ).slideDown( 200 );
 
     };
 
